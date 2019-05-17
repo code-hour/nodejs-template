@@ -3,6 +3,7 @@
 Tiny application to be duplicated when setting up basic project for node.js to avoid forgetting basic configurations
 
 ### API Endpoints
+* /
 * /v0/test
 * /docs
 
