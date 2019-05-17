@@ -1,0 +1,8 @@
+coverage/
+docs/
+logs/
+mock/
+node_modules/
+jest.config.js
+
+*.spec.js

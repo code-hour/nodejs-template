@@ -1,0 +1,10 @@
+# IDE
+.idea
+.vscode
+
+# Files and Folders
+node_modules
+log/
+*.log
+
+.env
