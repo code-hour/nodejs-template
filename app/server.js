@@ -4,9 +4,6 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const responseTime = require('response-time');
 require('dotenv').config();
-const swaggerUi = require('swagger-ui-express');
-// TODO: Swagger.json is from web as a sample. Will need to edit it.
-const swaggerDocument = require('./docs/swagger.json');
 
 // Default node environment if the environment variable is missing
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
@@ -35,16 +32,12 @@ app.get('/', (req, res) => {
   res.status(200).send('Application Started!').end();
 });
 
+require('./routes')(app);
+
 const PORT = process.env.PORT || 7001;
 app.listen(PORT, () => {
   logger.info(`We are live on ${PORT}`);
 });
-
-app.use(
-  '/docs',
-  swaggerUi.serve,
-  swaggerUi.setup(swaggerDocument, { customCss: '.swagger-ui .topbar { display: none }', explorer: true })
-);
 
 // catch 404 and forward to error handler
 app.use((req, res) => {
